@@ -151,11 +151,7 @@ class LStarMealy:
             if r not in profiles: profiles[r] = []
             profiles[r].append(s)
 
-        print(f"--- Table Audit ---")
-        print(f"Total Prefixes (S): {len(self.S)}")
-        print(f"Unique States (Unique Rows): {len(profiles)}")
-        for r, prefixes in profiles.items():
-            print(f"Row {r} is represented by: {prefixes[0]}")
+        
         
         return hyp
 
@@ -276,4 +272,5 @@ if __name__ == "__main__":
     print("\n--- AFTER MINIMIZATION ---")
     for state, trans in min_model.transitions.items():
        print(f"State {state}: {trans}")
+
     min_model.export_dot("ftp_learned_model.dot")
